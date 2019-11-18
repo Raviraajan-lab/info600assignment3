@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Student Record Management</title>
     <link rel="stylesheet" href="css/main.css" />
-    <script src="js/main.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/main.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
 
@@ -13,31 +15,38 @@
 <form id="inputs">
 <div>
   <label for="fullName">Full Name</label>
-  <input type="text" name="fullName" id="fullName" />
+  <input type="text" name="fullName" placeholder="Enter your Full Name" size="20" id="fullName" />
 </div>
 
 <div>
   <label for="major">Major</label>
-  <input type="text" name="major" id="major" />
+  <input type="text" name="major" placeholder="Enter your Major" size="20"  id="major" />
 </div>
 
 <div>
   <label for="startYear">Start Year</label>
-  <input type="text" name="startYear" id="startYear" />
+  <input type="text" name="startYear" placeholder="Enter the Start Year" size="15"  id="startYear" />
 </div>
 
 <div id="buttonParent">
-<input type="button" value="Add Record" id="addRec" />
+<input type="button" class="button" value="Add Record" id="addRec" />
 </div>
+
+<div id="buttonParent">
+<input type="button" class="button" value="Load Data" id="loaddata" />
+</div>
+
 </form>
 
 <br />
 
 <h1>Entered Records:</h1>
 
-<ul id="enteredRecords">
-</ul>
+<table>
+  <tbody id="enteredRecords">
 
+  </tbody>
+</table>
 
 </body>
 </html>

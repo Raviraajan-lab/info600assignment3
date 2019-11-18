@@ -1,4 +1,4 @@
-from flask import Flask, request, send_from_directory, make_response
+from flask import Flask, request, send_from_directory, make_response, jsonify
 import json
 import uuid
 from shutil import copyfile
@@ -34,9 +34,9 @@ def get_data(path):
 def getUsers():
     with open('data/entries.json', 'r') as f:
         d = json.load(f)
-        return(d)
+        return(jsonify(d))
 
-@app.route('/user/', methods = ['GET'])
+""" @app.route('/user/', methods = ['GET'])
 def addUser():
     newId = uuid.uuid4().hex[:6]
 
@@ -56,9 +56,32 @@ def addUser():
         # Add a new record to the JSON
         data["records"].append(newUser)
 
-    writeToFile(data, fileName)
+    writeToFile(data, fileName) """
 
-@app.route('/user/<user_id>', methods = ['GET'])
+@app.route('/user', methods = ['POST'])
+def addUser():
+    newId = uuid.uuid4().hex[:6]
+    newUser = {
+        "id": newId,
+        "fullName": request.form["fullName"],
+        "major": request.form["major"],
+        "startYear": int(request.form["startYear"]),
+        "time": request.form["time"]
+    }
+
+    data = ''
+    fileName = 'data/entries.json'
+    with open(fileName, 'r') as f:
+        # Read the JSON into a variable
+        data = json.load(f)
+
+        # Add a new record to the JSON
+        data["records"].append(newUser)
+
+    writeToFile('data/entries.json', data) 
+    return jsonify(newUser)
+
+@app.route('/user/<user_id>', methods = ['DELETE'])
 def deleteUser(user_id):
     data = ''
     fileName = 'data/entries.json'
@@ -81,7 +104,7 @@ def writeToFile(filePath, jsonString):
 
 if __name__ == '__main__':
   # If you mess up your data, re-run the container and it will be restored
-  copyfile('data/entries_orig.json', 'data/entries.json')
+    #copyfile('data/entries_orig.json', 'data/entries.json')
 
   app.run(host='0.0.0.0', port=8081, debug=True)
       

@@ -1,16 +1,46 @@
 {
     "records": [
         {
-            "fullName": "John Smith",
-            "id": "jsmith1",
-            "major": "Information Systems",
-            "startYear": 2015
+            "fullName": "Raviraajan",
+            "id": "b77c6a",
+            "major": "Information System",
+            "startYear": 2019,
+            "time": "08:21"
         },
         {
-            "fullName": "Greg Brown",
-            "id": "42",
-            "major": "Computer Science",
-            "startYear": 2012
+            "fullName": "Kiruthika",
+            "id": "c06154",
+            "major": "Information System",
+            "startYear": 2014,
+            "time": "08:22"
+        },
+        {
+            "fullName": "Priyadharshini",
+            "id": "a3fb99",
+            "major": "Software Engineering",
+            "startYear": 2019,
+            "time": "15:18"
+        },
+        {
+            "fullName": "Krist",
+            "id": "deef2f",
+            "major": "IS",
+            "startYear": 2019,
+            "time": "22:47"
+        },
+        {
+            "fullName": "Manoj",
+            "id": "3ea8e0",
+            "major": "Data Science",
+            "startYear": 2000,
+            "time": "22:47"
+        },
+        {
+            "fullName": "Test Data",
+            "id": "84b2bb",
+            "major": "Test Data",
+            "startYear": 2005,
+            "time": "22:48"
         }
     ]
 }

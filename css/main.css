@@ -10,7 +10,12 @@ input, label {
 }
 
 br {clear: both;}
-h1 {font-size: 18px;}
+h1 {
+  font-size: 18px;
+  color:#014090;
+  font:bold;
+  
+ }
 ul {
   list-style-type: none;
   margin: 0;
@@ -20,3 +25,40 @@ ul {
 #buttonParent {
   margin-top: 1.1em;
 }
+
+.button{
+  background-color: #e7e7e7; color: black;
+  border-radius: 8px;
+  border: 2px solid #4CAF50;
+  color: gray;
+  padding: 10px 6px;
+  text-align: center;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+body{
+  background-color:#99ffff
+}
+
+div{
+    
+      font-family:calibri;
+      font-size:16px;
+      font-style: bold,italic;
+      color:#414142;
+      padding: 2px;
+      
+  }
+
+table tbody tr button{
+    background-color: #e7e7e7; color: black;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    color: gray;
+    padding: 4px 6px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 10px;
+    cursor: pointer;
+  }
